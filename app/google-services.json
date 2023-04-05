@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "381187655931",
+    "project_id": "quotes-8d3ab",
+    "storage_bucket": "quotes-8d3ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:381187655931:android:69a5ca8865dc35242e085e",
+        "android_client_info": {
+          "package_name": "com.diegoRB.quotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "381187655931-q96f8b9tlfdlcq6i9ko6a8omjgk92llc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChDxlqYD_1KmYUAp9ENEun1SFIDXBQp08"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "381187655931-q96f8b9tlfdlcq6i9ko6a8omjgk92llc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
