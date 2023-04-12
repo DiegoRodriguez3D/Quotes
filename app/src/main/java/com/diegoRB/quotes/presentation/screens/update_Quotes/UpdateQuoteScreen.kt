@@ -12,7 +12,7 @@ import androidx.navigation.NavHostController
 import com.diegoRB.quotes.presentation.components.DefaultButton
 import com.diegoRB.quotes.presentation.components.DefaultTopBar
 import com.diegoRB.quotes.presentation.screens.update_Quotes.components.UpdateQuote
-import com.diegoRB.quotes.presentation.screens.update_Quotes.components.UpdatePostContent
+import com.diegoRB.quotes.presentation.screens.update_Quotes.components.UpdateQuotesContent
 import com.diegoRB.quotes.presentation.ui.theme.Red900
 import com.diegoRB.quotes.presentation.ui.theme.White50
 
@@ -29,7 +29,7 @@ fun UpdateQuoteScreen(navController: NavHostController,
                      color = Red900
                  )
         },
-        content = { UpdatePostContent() },
+        content = { UpdateQuotesContent() },
         bottomBar = {
             Card(backgroundColor = White50) {
                 DefaultButton(

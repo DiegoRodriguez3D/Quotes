@@ -25,7 +25,7 @@ fun DefaultTopBar(
 ) {
     TopAppBar(
         modifier = Modifier.fillMaxWidth(),
-        title = {Text(text = title, fontSize =23.sp, color = contentColor)},
+        title = {Text(text = title, fontSize =14.sp, color = contentColor)},
         backgroundColor = color,
         elevation = 0.dp,
         navigationIcon = {

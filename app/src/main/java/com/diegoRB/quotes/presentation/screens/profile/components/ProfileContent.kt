@@ -9,6 +9,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.AccountBox
 import androidx.compose.material.icons.rounded.Edit
 import androidx.compose.material.icons.rounded.ExitToApp
 import androidx.compose.runtime.Composable
@@ -19,7 +20,6 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -27,7 +27,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import com.diegoRB.quotes.presentation.MainActivity
-import com.diegoRB.quotes.R
 import com.diegoRB.quotes.presentation.components.DefaultButton
 import com.diegoRB.quotes.presentation.navigation.DetailsScreen
 import com.diegoRB.quotes.presentation.screens.profile.ProfileViewModel
@@ -76,8 +75,8 @@ fun ProfileContent(navController: NavHostController, viewModel: ProfileViewModel
                         )
                     }else{
                         Image(
-                            modifier= Modifier.size(80.dp),
-                            painter = painterResource(id = R.drawable.default_avatar),
+                            modifier= Modifier.size(115.dp),
+                            imageVector = Icons.Rounded.AccountBox,
                             contentDescription = "",
                             colorFilter = ColorFilter.tint(White50)
                         )
@@ -99,7 +98,7 @@ fun ProfileContent(navController: NavHostController, viewModel: ProfileViewModel
                     )
 
                     Spacer(modifier = Modifier.height(20.dp))
-                    Text(text = "PERFIL", fontSize = 42.sp, fontWeight = FontWeight.Bold, color = White50)
+                    Text(text = "PERFIL", fontSize = 40.sp, fontWeight = FontWeight.Bold, color = White50)
 
                 }
             }
@@ -119,7 +118,7 @@ fun ProfileContent(navController: NavHostController, viewModel: ProfileViewModel
                     horizontalAlignment = Alignment.CenterHorizontally) {
                     DefaultButton(
                         modifier = Modifier.fillMaxWidth(),
-                        text = "EDITAR",
+                        text = "USUARIO",
                         onClick = {
                             navController.navigate(route = DetailsScreen.ProfileUpdate.sendUser(viewModel.userData.toJson())) },
                         icon = Icons.Rounded.Edit

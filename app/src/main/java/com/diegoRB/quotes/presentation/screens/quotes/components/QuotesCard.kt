@@ -36,7 +36,11 @@ import com.diegoRB.quotes.presentation.ui.theme.Red900
 import com.diegoRB.quotes.presentation.ui.theme.White50
 
 @Composable
-fun QuotesCard(navController: NavHostController, posts: Quote, viewModel: QuotesViewModel = hiltViewModel()) {
+fun QuotesCard(
+    navController: NavHostController,
+    posts: Quote,
+    viewModel: QuotesViewModel = hiltViewModel()
+) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -46,40 +50,72 @@ fun QuotesCard(navController: NavHostController, posts: Quote, viewModel: Quotes
         backgroundColor = Black900
     ) {
         Column(verticalArrangement = Arrangement.Center) {
-                Box(
+            Box(
+                modifier = Modifier
+                    .clickable {
+                        navController.navigate(
+                            route = DetailsScreen.DetailQuote.sendQuote(
+                                posts.toJson()
+                            )
+                        )
+                    },
+            ) {
+                AsyncImage(
                     modifier = Modifier
-                        .clickable {navController.navigate(route = DetailsScreen.DetailQuote.sendQuote(posts.toJson()))},
-                ){
-                    AsyncImage(
-                        modifier= Modifier
-                            .fillMaxWidth()
-                            .height(350.dp),
-                        model = posts.image,
-                        contentDescription = "",
-                        contentScale = ContentScale.Crop,
-                        alpha = 0.7f
-                    )
+                        .fillMaxWidth()
+                        .height(350.dp),
+                    model = posts.image,
+                    contentDescription = "",
+                    contentScale = ContentScale.Crop,
+                    alpha = 0.7f
+                )
 
-                    Column(modifier = Modifier
+                Column(
+                    modifier = Modifier
                         .height(350.dp)
-                        .padding(20.dp),  verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
-                        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
-                        Text(text = posts.name, fontWeight = FontWeight.Bold, maxLines = 1, fontSize = 20.sp, color = MaterialTheme.colors.background)
+                        .padding(20.dp),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                            text = posts.name,
+                            fontWeight = FontWeight.Bold,
+                            maxLines = 1,
+                            fontSize = 20.sp,
+                            color = MaterialTheme.colors.background
+                        )
 
-                        }
-                        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
-                        Text(text = "`" + posts.description + "´", fontSize = 18.sp, fontStyle = FontStyle.Italic, textAlign = TextAlign.Justify, maxLines = 5, color = MaterialTheme.colors.background)
-                        }
+                    }
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                            text = "`" + posts.description + "´",
+                            fontStyle = FontStyle.Italic,
+                            textAlign = TextAlign.Justify,
+                            maxLines = 5,
+                            color = MaterialTheme.colors.background
+                        )
                     }
                 }
+            }
 
-            Row(modifier = Modifier
-                .height(70.dp)
-                .fillMaxWidth()
-                .background(White50)
-                .padding(15.dp), horizontalArrangement = Arrangement.SpaceEvenly, verticalAlignment = Alignment.CenterVertically) {
+            Row(
+                modifier = Modifier
+                    .height(70.dp)
+                    .fillMaxWidth()
+                    .background(White50)
+                    .padding(15.dp),
+                horizontalArrangement = Arrangement.SpaceEvenly,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
 
-                if(!posts.user?.name.isNullOrBlank()){
+                if (!posts.user?.name.isNullOrBlank()) {
                     Card(
                         modifier = Modifier
                             .wrapContentSize(),
@@ -87,7 +123,11 @@ fun QuotesCard(navController: NavHostController, posts: Quote, viewModel: Quotes
                         shape = RoundedCornerShape(15.dp),
                         backgroundColor = Color.Transparent
                     ) {
-                        Row(modifier = Modifier.padding(5.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Center) {
+                        Row(
+                            modifier = Modifier.padding(5.dp),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.Center
+                        ) {
                             AsyncImage(
                                 modifier = Modifier
                                     .size(30.dp)
@@ -99,25 +139,23 @@ fun QuotesCard(navController: NavHostController, posts: Quote, viewModel: Quotes
                             Spacer(modifier = Modifier.width(5.dp))
                             Text(
                                 text = posts.user?.name ?: "",
-                                fontSize = 13.sp,
                                 fontWeight = FontWeight.Bold,
                                 color = MaterialTheme.colors.onPrimary
                             )
                         }
                     }
-                }else{
+                } else {
                     Box {
 
                     }
                 }
 
-                DefaultVerticalDivider(pad=10)
+                DefaultVerticalDivider(pad = 10)
 
                 Card(
                     modifier = Modifier
                         .wrapContentSize()
-                        .padding(5.dp)
-                    ,
+                        .padding(5.dp),
                     elevation = 0.dp,
                     shape = RoundedCornerShape(15.dp), backgroundColor = Color.Transparent
                 ) {
@@ -142,22 +180,24 @@ fun QuotesCard(navController: NavHostController, posts: Quote, viewModel: Quotes
 
                         Spacer(modifier = Modifier.width(5.dp))
 
-                        Text(text = posts.category, fontSize = 13.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colors.onPrimary)
+                        Text(
+                            text = posts.category,
+                            color = MaterialTheme.colors.onPrimary
+                        )
                     }
                 }
 
-                DefaultVerticalDivider(pad=10)
+                DefaultVerticalDivider(pad = 10)
 
                 Card(
                     modifier = Modifier
                         .wrapContentSize()
                         .clickable {
-                            if(posts.likes.contains(viewModel.currentUser?.uid))
+                            if (posts.likes.contains(viewModel.currentUser?.uid))
                                 viewModel.unlike(posts.id, viewModel.currentUser?.uid ?: "")
                             else
                                 viewModel.like(posts.id, viewModel.currentUser?.uid ?: "")
-                        }
-                    ,
+                        },
                     elevation = 0.dp,
                     shape = RoundedCornerShape(15.dp), backgroundColor = Color.Transparent
                 ) {
@@ -168,14 +208,14 @@ fun QuotesCard(navController: NavHostController, posts: Quote, viewModel: Quotes
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.Center
                     ) {
-                        if(posts.likes.contains(viewModel.currentUser?.uid)){
+                        if (posts.likes.contains(viewModel.currentUser?.uid)) {
                             Icon(
                                 modifier = Modifier.height(35.dp),
                                 imageVector = Icons.Rounded.Favorite,
                                 contentDescription = "",
                                 tint = Red900
                             )
-                        }else{
+                        } else {
                             Icon(
                                 modifier = Modifier.height(35.dp),
                                 imageVector = Icons.Rounded.FavoriteBorder,
@@ -185,7 +225,11 @@ fun QuotesCard(navController: NavHostController, posts: Quote, viewModel: Quotes
 
                         Spacer(modifier = Modifier.width(5.dp))
 
-                        Text(text = posts.likes.size.toString(), fontSize = 13.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colors.onPrimary)
+                        Text(
+                            text = posts.likes.size.toString(),
+                            fontWeight = FontWeight.Bold,
+                            color = MaterialTheme.colors.onPrimary
+                        )
                     }
                 }
             }

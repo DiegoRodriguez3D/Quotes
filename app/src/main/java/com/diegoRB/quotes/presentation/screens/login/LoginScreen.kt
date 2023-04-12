@@ -8,12 +8,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import com.diegoRB.quotes.presentation.screens.login.LoginViewModel
 import com.diegoRB.quotes.presentation.components.DefaultButton
-import com.diegoRB.quotes.presentation.components.DefaultTopBar
 import com.diegoRB.quotes.presentation.screens.login.components.Login
 import com.diegoRB.quotes.presentation.screens.login.components.LoginContent
-import com.diegoRB.quotes.presentation.ui.theme.Red900
 import com.diegoRB.quotes.presentation.ui.theme.White50
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
@@ -22,11 +19,7 @@ fun LoginScreen(navController: NavHostController, viewModel: LoginViewModel = hi
 
     Scaffold(
         topBar = {
-                 DefaultTopBar(
-                     title = "",
-                     hasNavBack = false,
-                     color = Red900
-                 )
+
         },
         content = {
             Column {

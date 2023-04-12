@@ -32,7 +32,7 @@ import com.diegoRB.quotes.presentation.ui.theme.Red900
 import com.diegoRB.quotes.presentation.ui.theme.White50
 
 @Composable
-fun UpdatePostContent(viewModel: UpdateQuoteViewModel = hiltViewModel()) {
+fun UpdateQuotesContent(viewModel: UpdateQuoteViewModel = hiltViewModel()) {
 
     val state = viewModel.state
     viewModel.resultingActivityHandler.handle()
@@ -113,7 +113,7 @@ fun UpdatePostContent(viewModel: UpdateQuoteViewModel = hiltViewModel()) {
                         .padding(15.dp),
                     horizontalAlignment = Alignment.CenterHorizontally) {
 
-                    Text(modifier = Modifier.align(Alignment.Start), text = "Editar Quote", fontSize = 42.sp, fontWeight = FontWeight.Bold)
+                    Text(modifier = Modifier.align(Alignment.Start), text = "Editar Quote", fontSize = 40.sp, fontWeight = FontWeight.Bold)
                     Spacer(modifier = Modifier.height(10.dp))
                     DefaultTextField(
                         modifier = Modifier
@@ -151,7 +151,7 @@ fun UpdatePostContent(viewModel: UpdateQuoteViewModel = hiltViewModel()) {
                             .padding(vertical = 5.dp)
                             .width(110.dp),
                         text = "CATEGORIA",
-                        fontSize = 17.sp,
+                        fontSize = 20.sp,
                         fontWeight = FontWeight.Bold
                     )
 
@@ -170,7 +170,7 @@ fun UpdatePostContent(viewModel: UpdateQuoteViewModel = hiltViewModel()) {
                                         Red900
                                     ) else BorderStroke(2.dp, Grey500), RoundedCornerShape(15.dp)
                                 ),
-                            horizontalArrangement = Arrangement.Center,
+                            horizontalArrangement = Arrangement.SpaceEvenly,
                             verticalAlignment = Alignment.CenterVertically
                         ) {
 
@@ -184,7 +184,7 @@ fun UpdatePostContent(viewModel: UpdateQuoteViewModel = hiltViewModel()) {
                                     .height(50.dp),
                                 verticalAlignment = Alignment.CenterVertically) {
                                 Text(
-                                    modifier = Modifier.width(100.dp),
+                                    modifier = Modifier.width(120.dp),
                                     text = option.category
                                 )
                                 Spacer(modifier = Modifier.width(20.dp))

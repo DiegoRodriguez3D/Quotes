@@ -42,8 +42,8 @@ fun ProfileEditContent(viewModel: ProfileUpdateViewModel = hiltViewModel()) {
 
     DialogCapturePicture(
         status = dialogState,
-        takePhoto = {viewModel.takePhoto()},
-        pickImage = {viewModel.pickImage()}
+        takePhoto = { viewModel.takePhoto() },
+        pickImage = { viewModel.pickImage() }
     )
 
     Box(modifier = Modifier.fillMaxSize()) {
@@ -59,18 +59,29 @@ fun ProfileEditContent(viewModel: ProfileUpdateViewModel = hiltViewModel()) {
                         ), startY = 400f, endY = 2200f
                     )
                 )
-        ){
-            Box(modifier = Modifier
-                .fillMaxWidth()
-                .height(250.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(250.dp)
             ) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ) {
-                    Icon(modifier = Modifier.size(80.dp), painter = painterResource(id = R.drawable.update_user_icon), contentDescription = "", tint = White50)
-                    Text(text = "EDITAR USUARIO", fontSize = 30.sp, fontWeight = FontWeight.Bold, color = White50)
+                    Icon(
+                        modifier = Modifier.size(80.dp),
+                        imageVector = Icons.Rounded.Person,
+                        contentDescription = "",
+                        tint = White50
+                    )
+                    Text(
+                        text = "USUARIO",
+                        fontSize = 30.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = White50
+                    )
                 }
             }
 
@@ -89,7 +100,7 @@ fun ProfileEditContent(viewModel: ProfileUpdateViewModel = hiltViewModel()) {
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     //Muestra avatar usuario
-                    if(viewModel.state.image!=""){
+                    if (viewModel.state.image != "") {
                         AsyncImage(
                             modifier = Modifier
                                 .height(115.dp)
@@ -98,33 +109,38 @@ fun ProfileEditContent(viewModel: ProfileUpdateViewModel = hiltViewModel()) {
                                 .clickable { dialogState.value = true },
                             model = viewModel.state.image,
                             contentDescription = "Selected image",
-                            contentScale = ContentScale.Crop)
-                    }else{
+                            contentScale = ContentScale.Crop
+                        )
+                    } else {
                         //Si no tiene, muestra imagen por defecto
                         Image(
-                            modifier= Modifier
+                            modifier = Modifier
                                 .size(80.dp)
                                 .clickable {
                                     dialogState.value = true
                                 },
                             painter = painterResource(id = R.drawable.default_avatar),
-                            contentDescription = "Default image")
+                            contentDescription = "Default image"
+                        )
                     }
-                    
-                    Text(text = "SELECCIONA AVATAR", fontWeight = FontWeight.Bold, fontSize = 20.sp)
+
+                    Spacer(modifier = Modifier.height(5.dp))
+
+
+                    Text(text = "SELECCIONA AVATAR", fontWeight = FontWeight.Bold, fontSize = 14.sp)
 
                     Spacer(modifier = Modifier.height(15.dp))
 
                     DefaultTextField(
                         modifier = Modifier.fillMaxWidth(),
                         value = state.name,
-                        onValueChange = {viewModel.onNameInput(it)},
+                        onValueChange = { viewModel.onNameInput(it) },
                         label = "Nombre",
                         icon = Icons.Rounded.Person,
                         tipo = KeyboardType.Text,
                         shape = RoundedCornerShape(topStart = 12.dp, bottomEnd = 12.dp),
                         errorMsg = viewModel.nameErrMsg,
-                        validateField = {viewModel.validateName()}
+                        validateField = { viewModel.validateName() }
                     )
                 }
             }

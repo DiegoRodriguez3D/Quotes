@@ -71,7 +71,7 @@ fun DetailQuoteContent(viewModel: DetailQuoteViewModel = hiltViewModel()) {
                             Spacer(modifier = Modifier.width(10.dp))
                             Text(
                                 text = viewModel.quote.user?.name ?: "",
-                                fontSize = 20.sp,
+                                fontSize = 14.sp,
                                 fontWeight = FontWeight.Bold
                             )
                         }
@@ -113,7 +113,7 @@ fun DetailQuoteContent(viewModel: DetailQuoteViewModel = hiltViewModel()) {
 
                         Spacer(modifier = Modifier.width(10.dp))
 
-                        Text(text = viewModel.quote.category, fontSize = 20.sp, fontWeight = FontWeight.Bold, color = Color.White)
+                        Text(text = viewModel.quote.category, fontSize = 14.sp, fontWeight = FontWeight.Bold, color = Color.White)
                     }
                 }
             }

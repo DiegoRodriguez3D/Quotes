@@ -110,7 +110,7 @@ fun NewQuoteContent(viewModel: NewQuoteViewModel = hiltViewModel()) {
                         .padding(15.dp),
                     horizontalAlignment = Alignment.CenterHorizontally) {
 
-                    Text(modifier = Modifier.align(Alignment.Start), text = "Nuevo Quote", fontSize = 42.sp, fontWeight = FontWeight.Bold)
+                    Text(modifier = Modifier.align(Alignment.Start), text = "Nuevo Quote", fontSize = 40.sp, fontWeight = FontWeight.Bold)
                     Spacer(modifier = Modifier.height(10.dp))
                     DefaultTextField(
                         modifier = Modifier
@@ -148,7 +148,7 @@ fun NewQuoteContent(viewModel: NewQuoteViewModel = hiltViewModel()) {
                             .padding(vertical = 5.dp)
                             .width(110.dp),
                         text = "CATEGORIA",
-                        fontSize = 17.sp,
+                        fontSize = 20.sp,
                         fontWeight = FontWeight.Bold
                     )
 
@@ -162,7 +162,7 @@ fun NewQuoteContent(viewModel: NewQuoteViewModel = hiltViewModel()) {
                                     onClick = { viewModel.onCategoryInput(option.category) }
                                 )
                                 .border(if(option.category == state.category)BorderStroke(2.dp, Red900) else BorderStroke(1.dp, Grey500), RoundedCornerShape(15.dp)),
-                            horizontalArrangement = Arrangement.Center,
+                            horizontalArrangement = Arrangement.SpaceEvenly,
                             verticalAlignment = Alignment.CenterVertically
                         ) {
 
@@ -176,8 +176,9 @@ fun NewQuoteContent(viewModel: NewQuoteViewModel = hiltViewModel()) {
                                     .height(50.dp),
                                 verticalAlignment = Alignment.CenterVertically) {
                                 Text(
-                                    modifier = Modifier.width(100.dp),
-                                    text = option.category
+                                    modifier = Modifier.width(120.dp),
+                                    text = option.category,
+                                    maxLines = 1
                                 )
                                 Spacer(modifier = Modifier.width(20.dp))
                                 Image(

@@ -45,7 +45,7 @@ fun DefaultButton( //Introduzco parámetros en la función, de forma que pueda r
             Spacer(modifier = Modifier.width(5.dp))
             Text(
                 text = text,
-                fontSize = 24.sp,
+                fontSize = 20.sp,
                 fontWeight = FontWeight.Bold,
                 color = textColor
             )

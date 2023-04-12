@@ -6,6 +6,9 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Delete
+import androidx.compose.material.icons.rounded.Edit
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -120,7 +123,7 @@ fun MyQuotesCard(navController: NavHostController, quote: Quote, viewModel: MyQu
 
                             Icon(
                                 modifier = Modifier.height(20.dp),
-                                painter = painterResource(id = R.drawable.edit_icon),
+                                imageVector = Icons.Rounded.Edit,
                                 contentDescription = "",
                             )
                         
@@ -185,7 +188,7 @@ fun MyQuotesCard(navController: NavHostController, quote: Quote, viewModel: MyQu
                     ) {
                             Icon(
                                 modifier = Modifier.height(20.dp),
-                                painter = painterResource(id = R.drawable.delete_icon),
+                                imageVector = Icons.Rounded.Delete,
                                 contentDescription = "",
                                 tint = Red900
                             )

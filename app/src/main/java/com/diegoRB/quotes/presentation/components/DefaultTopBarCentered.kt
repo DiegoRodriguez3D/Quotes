@@ -12,7 +12,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.diegoRB.quotes.presentation.ui.theme.White50
 
@@ -63,8 +62,7 @@ fun DefaultTopBarCentered(
                             textAlign = TextAlign.Center,
                             fontWeight = FontWeight.Bold,
                             maxLines = 1,
-                            color = contentColor,
-                            fontSize = 28.sp
+                            color = contentColor
                         )
                     }
                 }

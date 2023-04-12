@@ -12,7 +12,6 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.diegoRB.quotes.presentation.ui.theme.Black900
 import com.diegoRB.quotes.presentation.ui.theme.White50
 
@@ -33,7 +32,7 @@ fun DialogDeleteQuote(
             onDismissRequest = { status.value = false },
             backgroundColor = White50,
             title = {
-                Text(text = "¿Desea eliminar la publicación?", fontSize = 16.sp, color = Black900)
+                Text(text = "¿Desea eliminar la publicación?", color = Black900)
             },
             buttons = {
                 Row(
@@ -42,7 +41,7 @@ fun DialogDeleteQuote(
                 ) {
                     Button(
                         modifier = Modifier.width(130.dp),
-                        onClick = { status.value = false; deleteQuote() } //El status.value=false oculta el dialogo al seleccionar una de las opciones!
+                        onClick = { status.value = false; deleteQuote() }
                     ) {
                         Text(text = "Si", color = White50)
                     }
