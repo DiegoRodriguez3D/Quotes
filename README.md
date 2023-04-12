@@ -1,5 +1,5 @@
 # Quotes
-Proyecto app muestra de Diego Rodriguez Barcala
+Proyecto app red social de Diego Rodriguez Barcala
 
 Esta aplicación se ha desarrollado utilizando las siguientes tecnologías:
   - Kotlin y Jetpack Compose (Codificación y diseño de la interfaz)
