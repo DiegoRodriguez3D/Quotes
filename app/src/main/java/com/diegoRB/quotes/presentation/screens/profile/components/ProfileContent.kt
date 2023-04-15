@@ -97,16 +97,13 @@ fun ProfileContent(navController: NavHostController, viewModel: ProfileViewModel
                         color = White50
                     )
 
-                    Spacer(modifier = Modifier.height(20.dp))
-                    Text(text = "PERFIL", fontSize = 40.sp, fontWeight = FontWeight.Bold, color = White50)
-
                 }
             }
 
             Card(
                 modifier = Modifier
                     .fillMaxHeight()
-                    .padding(top = 20.dp, bottom = 40.dp)
+                    .padding(bottom = 40.dp)
                 ,
                 shape = RoundedCornerShape(25.dp),
                 backgroundColor = White50,
@@ -116,6 +113,10 @@ fun ProfileContent(navController: NavHostController, viewModel: ProfileViewModel
                     .fillMaxSize()
                     .padding(vertical = 30.dp, horizontal = 60.dp),
                     horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(text = "PERFIL", fontSize = 35.sp, fontWeight = FontWeight.Bold, color = Black900, maxLines = 1)
+
+                    Spacer(modifier = Modifier.height(20.dp))
+
                     DefaultButton(
                         modifier = Modifier.fillMaxWidth(),
                         text = "USUARIO",

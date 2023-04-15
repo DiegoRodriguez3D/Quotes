@@ -16,7 +16,7 @@ fun GetQuotes(navController: NavHostController, viewModel: QuotesViewModel = hil
             LoadingProgressBar()
         }
         is Response.Success -> {
-            PostsContent(navController, posts = response.data) //La lista de post viene en la response
+            QuotesContent(navController, posts = response.data) //La lista de post viene en la response
         }
         is Response.Failure -> { //Devuelve un mensaje cuando el inicio de sesion NO es correcto
             Toast.makeText(LocalContext.current, response.exception?.message ?: "Error desconocido", Toast.LENGTH_LONG).show()

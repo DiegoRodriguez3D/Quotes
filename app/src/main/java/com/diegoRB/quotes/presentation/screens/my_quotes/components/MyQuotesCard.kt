@@ -37,7 +37,11 @@ import com.diegoRB.quotes.presentation.ui.theme.Red900
 import com.diegoRB.quotes.presentation.ui.theme.White50
 
 @Composable
-fun MyQuotesCard(navController: NavHostController, quote: Quote, viewModel: MyQuotesViewModel = hiltViewModel()) {
+fun MyQuotesCard(
+    navController: NavHostController,
+    quote: Quote,
+    viewModel: MyQuotesViewModel = hiltViewModel()
+) {
 
     val dialogState = remember {
         mutableStateOf(false)
@@ -45,7 +49,7 @@ fun MyQuotesCard(navController: NavHostController, quote: Quote, viewModel: MyQu
 
     DialogDeleteQuote(
         status = dialogState,
-        deleteQuote = {viewModel.delete(idQuote = quote.id)},
+        deleteQuote = { viewModel.delete(idQuote = quote.id) },
         dismiss = {}
     )
 
@@ -60,45 +64,68 @@ fun MyQuotesCard(navController: NavHostController, quote: Quote, viewModel: MyQu
         Column(verticalArrangement = Arrangement.Center) {
             Box(
                 modifier = Modifier
-                    .clickable {navController.navigate(route = DetailsScreen.DetailQuote.sendQuote(quote.toJson()))},
-            ){
+                    .clickable {
+                        navController.navigate(
+                            route = DetailsScreen.DetailQuote.sendQuote(
+                                quote.toJson()
+                            )
+                        )
+                    },
+            ) {
                 AsyncImage(
-                    modifier= Modifier
+                    modifier = Modifier
                         .fillMaxWidth()
-                        .height(350.dp),
+                        .height(250.dp),
                     model = quote.image,
                     contentDescription = "",
                     contentScale = ContentScale.Crop,
                     alpha = 0.7f
                 )
 
-                Column(modifier = Modifier
-                    .height(350.dp)
-                    .padding(20.dp),  verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
+                Column(
+                    modifier = Modifier
+                        .height(250.dp)
+                        .padding(20.dp),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.Center
                     ) {
-                        Text(text = quote.name, fontWeight = FontWeight.Bold, maxLines = 1, fontSize = 20.sp, color = MaterialTheme.colors.background)
+                        Text(
+                            text = quote.name,
+                            fontWeight = FontWeight.Bold,
+                            maxLines = 1,
+                            fontSize = 20.sp,
+                            color = MaterialTheme.colors.background
+                        )
 
                     }
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.Center
                     ) {
-                        Text(text = "`" + quote.description + "´", fontSize = 18.sp, fontStyle = FontStyle.Italic, textAlign = TextAlign.Justify, maxLines = 5, color = MaterialTheme.colors.background)
+                        Text(
+                            text = quote.description,
+                            fontStyle = FontStyle.Italic,
+                            textAlign = TextAlign.Justify,
+                            maxLines = 6,
+                            color = MaterialTheme.colors.background
+                        )
                     }
                 }
             }
 
             Row(
                 modifier = Modifier
-                  .height(70.dp)
+                    .height(70.dp)
                     .fillMaxWidth()
-                  .background(White50)
-                  .padding(15.dp),
+                    .background(White50)
+                    .padding(15.dp),
                 horizontalArrangement = Arrangement.SpaceEvenly,
-                verticalAlignment = Alignment.CenterVertically) {
+                verticalAlignment = Alignment.CenterVertically
+            ) {
 
                 Card(
                     modifier = Modifier
@@ -109,8 +136,7 @@ fun MyQuotesCard(navController: NavHostController, quote: Quote, viewModel: MyQu
                                     quote.toJson()
                                 )
                             )
-                        }
-                    ,
+                        },
                     elevation = 0.dp,
                     shape = RoundedCornerShape(15.dp), backgroundColor = Color.Transparent
                 ) {
@@ -121,25 +147,20 @@ fun MyQuotesCard(navController: NavHostController, quote: Quote, viewModel: MyQu
                         horizontalArrangement = Arrangement.Center
                     ) {
 
-                            Icon(
-                                modifier = Modifier.height(20.dp),
-                                imageVector = Icons.Rounded.Edit,
-                                contentDescription = "",
-                            )
-                        
-                        Spacer(modifier = Modifier.width(5.dp))
+                        Icon(
+                            modifier = Modifier.size(30.dp),
+                            imageVector = Icons.Rounded.Edit,
+                            contentDescription = "",
+                        )
 
-
-                        Text(text = "Editar", fontSize = 13.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colors.onPrimary)
                     }
                 }
 
-                DefaultVerticalDivider(pad=10)
+                DefaultVerticalDivider(pad = 10)
 
                 Card(
                     modifier = Modifier
-                        .wrapContentSize()
-                    ,
+                        .wrapContentSize(),
                     elevation = 0.dp,
                     shape = RoundedCornerShape(15.dp), backgroundColor = Color.Transparent
                 ) {
@@ -150,7 +171,7 @@ fun MyQuotesCard(navController: NavHostController, quote: Quote, viewModel: MyQu
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Image(
-                            modifier = Modifier.size(20.dp),
+                            modifier = Modifier.size(25.dp),
                             painter = painterResource(
                                 id = if (quote.category == "Deportes") R.drawable.sports_icon
                                 else if (quote.category == "Salud") R.drawable.health_icon
@@ -164,19 +185,24 @@ fun MyQuotesCard(navController: NavHostController, quote: Quote, viewModel: MyQu
 
                         Spacer(modifier = Modifier.width(10.dp))
 
-                        Text(text = quote.category, fontSize = 13.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colors.onPrimary)
+                        Text(
+                            text = quote.category,
+                            fontSize = 15.sp,
+                            maxLines = 1,
+                            fontWeight = FontWeight.Bold,
+                            color = MaterialTheme.colors.onPrimary
+                        )
                     }
                 }
 
-                DefaultVerticalDivider(pad=10)
+                DefaultVerticalDivider(pad = 10)
 
                 Card(
                     modifier = Modifier
                         .wrapContentSize()
                         .clickable {
-                            dialogState.value=true
-                        }
-                    ,
+                            dialogState.value = true
+                        },
                     elevation = 0.dp,
                     shape = RoundedCornerShape(15.dp), backgroundColor = Color.Transparent
                 ) {
@@ -186,16 +212,13 @@ fun MyQuotesCard(navController: NavHostController, quote: Quote, viewModel: MyQu
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.Center
                     ) {
-                            Icon(
-                                modifier = Modifier.height(20.dp),
-                                imageVector = Icons.Rounded.Delete,
-                                contentDescription = "",
-                                tint = Red900
-                            )
-                        
-                        Spacer(modifier = Modifier.width(5.dp))
+                        Icon(
+                            modifier = Modifier.size(30.dp),
+                            imageVector = Icons.Rounded.Delete,
+                            contentDescription = "",
+                            tint = Red900
+                        )
 
-                        Text(text = "Borrar", fontSize = 13.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colors.onPrimary)
                     }
                 }
             }

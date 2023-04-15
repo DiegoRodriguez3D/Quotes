@@ -8,10 +8,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Lock
-import androidx.compose.material.icons.rounded.AccountCircle
-import androidx.compose.material.icons.rounded.Email
-import androidx.compose.material.icons.rounded.Lock
-import androidx.compose.material.icons.rounded.Person
+import androidx.compose.material.icons.rounded.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -51,21 +48,20 @@ fun SingupContent(navController: NavHostController, viewModel: SingupViewModel =
     ) {
         Column(
             modifier = Modifier
-                .padding(top = 100.dp, bottom = 50.dp),
+                .padding(top = 50.dp, bottom = 50.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Icon(
-                modifier = Modifier.size(80.dp),
-                imageVector = Icons.Rounded.AccountCircle,
+                modifier = Modifier.size(150.dp),
+                imageVector = Icons.Rounded.AccountBox,
                 contentDescription = "",
                 tint = White50
             )
-            Text(text = "REGISTER", fontSize = 40.sp, fontWeight = FontWeight.Bold, color = White50)
         }
 
         Card(
             modifier = Modifier
-                .height(500.dp),
+                .height(600.dp),
             shape = RoundedCornerShape(25.dp),
             backgroundColor = White50,
             elevation = 0.dp
@@ -77,6 +73,15 @@ fun SingupContent(navController: NavHostController, viewModel: SingupViewModel =
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Top
             ) {
+
+                Text(
+                    text = "REGISTRO",
+                    fontSize = 35.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Black900
+                )
+
+                Spacer(modifier = Modifier.height(20.dp))
 
                 DefaultTextField(
                     modifier = Modifier.fillMaxWidth(),

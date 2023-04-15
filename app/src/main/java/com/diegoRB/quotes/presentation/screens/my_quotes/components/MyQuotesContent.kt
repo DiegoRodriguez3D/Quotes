@@ -15,18 +15,18 @@ fun MyQuotesContent(
     quotes: List<Quote>
 ) {
 
-                LazyColumn(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(start = 5.dp, end = 5.dp, top = 8.dp, bottom = 60.dp)
+    LazyColumn(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 5.dp, end = 5.dp, top = 8.dp, bottom = 60.dp)
 
-                ){
-                    items(
-                        items = quotes
+    ) {
+        items(
+            items = quotes
 
-                    ){quote ->
-                        MyQuotesCard(navController, quote = quote)
-                    }
-                }
+        ) { quote ->
+            MyQuotesCard(navController, quote = quote)
+        }
+    }
 
 }

@@ -113,7 +113,7 @@ fun UpdateQuotesContent(viewModel: UpdateQuoteViewModel = hiltViewModel()) {
                         .padding(15.dp),
                     horizontalAlignment = Alignment.CenterHorizontally) {
 
-                    Text(modifier = Modifier.align(Alignment.Start), text = "Editar Quote", fontSize = 40.sp, fontWeight = FontWeight.Bold)
+                    Text(text = "Editar Quote", fontSize = 35.sp, fontWeight = FontWeight.Bold)
                     Spacer(modifier = Modifier.height(10.dp))
                     DefaultTextField(
                         modifier = Modifier
@@ -152,7 +152,8 @@ fun UpdateQuotesContent(viewModel: UpdateQuoteViewModel = hiltViewModel()) {
                             .width(110.dp),
                         text = "CATEGORIA",
                         fontSize = 20.sp,
-                        fontWeight = FontWeight.Bold
+                        fontWeight = FontWeight.Bold,
+                        maxLines = 1
                     )
 
                     viewModel.radioOptions.forEach { option ->
@@ -184,8 +185,9 @@ fun UpdateQuotesContent(viewModel: UpdateQuoteViewModel = hiltViewModel()) {
                                     .height(50.dp),
                                 verticalAlignment = Alignment.CenterVertically) {
                                 Text(
-                                    modifier = Modifier.width(120.dp),
-                                    text = option.category
+                                    modifier = Modifier.width(150.dp),
+                                    text = option.category,
+                                    maxLines = 1
                                 )
                                 Spacer(modifier = Modifier.width(20.dp))
                                 Image(

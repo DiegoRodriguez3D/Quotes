@@ -38,7 +38,7 @@ import com.diegoRB.quotes.presentation.ui.theme.White50
 @Composable
 fun QuotesCard(
     navController: NavHostController,
-    posts: Quote,
+    quotes: Quote,
     viewModel: QuotesViewModel = hiltViewModel()
 ) {
     Card(
@@ -55,7 +55,7 @@ fun QuotesCard(
                     .clickable {
                         navController.navigate(
                             route = DetailsScreen.DetailQuote.sendQuote(
-                                posts.toJson()
+                                quotes.toJson()
                             )
                         )
                     },
@@ -63,8 +63,8 @@ fun QuotesCard(
                 AsyncImage(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(350.dp),
-                    model = posts.image,
+                        .height(250.dp),
+                    model = quotes.image,
                     contentDescription = "",
                     contentScale = ContentScale.Crop,
                     alpha = 0.7f
@@ -72,7 +72,7 @@ fun QuotesCard(
 
                 Column(
                     modifier = Modifier
-                        .height(350.dp)
+                        .height(250.dp)
                         .padding(20.dp),
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
@@ -82,7 +82,7 @@ fun QuotesCard(
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = posts.name,
+                            text = quotes.name,
                             fontWeight = FontWeight.Bold,
                             maxLines = 1,
                             fontSize = 20.sp,
@@ -95,10 +95,10 @@ fun QuotesCard(
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "`" + posts.description + "´",
+                            text = quotes.description,
                             fontStyle = FontStyle.Italic,
                             textAlign = TextAlign.Justify,
-                            maxLines = 5,
+                            maxLines = 6,
                             color = MaterialTheme.colors.background
                         )
                     }
@@ -115,7 +115,7 @@ fun QuotesCard(
                 verticalAlignment = Alignment.CenterVertically
             ) {
 
-                if (!posts.user?.name.isNullOrBlank()) {
+                if (!quotes.user?.name.isNullOrBlank()) {
                     Card(
                         modifier = Modifier
                             .wrapContentSize(),
@@ -132,13 +132,13 @@ fun QuotesCard(
                                 modifier = Modifier
                                     .size(30.dp)
                                     .clip(CircleShape),
-                                model = posts.user?.image,
+                                model = quotes.user?.image,
                                 contentDescription = "",
                                 contentScale = ContentScale.Crop
                             )
                             Spacer(modifier = Modifier.width(5.dp))
                             Text(
-                                text = posts.user?.name ?: "",
+                                text = quotes.user?.name ?: "",
                                 fontWeight = FontWeight.Bold,
                                 color = MaterialTheme.colors.onPrimary
                             )
@@ -166,11 +166,11 @@ fun QuotesCard(
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Image(
-                            modifier = Modifier.size(20.dp),
+                            modifier = Modifier.size(25.dp),
                             painter = painterResource(
-                                id = if (posts.category == "Deportes") R.drawable.sports_icon
-                                else if (posts.category == "Salud") R.drawable.health_icon
-                                else if (posts.category == "Productividad") R.drawable.productivity_icon
+                                id = if (quotes.category == "Deportes") R.drawable.sports_icon
+                                else if (quotes.category == "Salud") R.drawable.health_icon
+                                else if (quotes.category == "Productividad") R.drawable.productivity_icon
                                 else R.drawable.add_img_icon
                             ),
                             contentDescription = "",
@@ -178,10 +178,13 @@ fun QuotesCard(
                             contentScale = ContentScale.Crop
                         )
 
-                        Spacer(modifier = Modifier.width(5.dp))
+                        Spacer(modifier = Modifier.width(10.dp))
 
                         Text(
-                            text = posts.category,
+                            text = quotes.category,
+                            fontSize = 15.sp,
+                            maxLines = 1,
+                            fontWeight = FontWeight.Bold,
                             color = MaterialTheme.colors.onPrimary
                         )
                     }
@@ -193,10 +196,10 @@ fun QuotesCard(
                     modifier = Modifier
                         .wrapContentSize()
                         .clickable {
-                            if (posts.likes.contains(viewModel.currentUser?.uid))
-                                viewModel.unlike(posts.id, viewModel.currentUser?.uid ?: "")
+                            if (quotes.likes.contains(viewModel.currentUser?.uid))
+                                viewModel.unlike(quotes.id, viewModel.currentUser?.uid ?: "")
                             else
-                                viewModel.like(posts.id, viewModel.currentUser?.uid ?: "")
+                                viewModel.like(quotes.id, viewModel.currentUser?.uid ?: "")
                         },
                     elevation = 0.dp,
                     shape = RoundedCornerShape(15.dp), backgroundColor = Color.Transparent
@@ -208,7 +211,7 @@ fun QuotesCard(
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.Center
                     ) {
-                        if (posts.likes.contains(viewModel.currentUser?.uid)) {
+                        if (quotes.likes.contains(viewModel.currentUser?.uid)) {
                             Icon(
                                 modifier = Modifier.height(35.dp),
                                 imageVector = Icons.Rounded.Favorite,
@@ -226,7 +229,7 @@ fun QuotesCard(
                         Spacer(modifier = Modifier.width(5.dp))
 
                         Text(
-                            text = posts.likes.size.toString(),
+                            text = quotes.likes.size.toString(),
                             fontWeight = FontWeight.Bold,
                             color = MaterialTheme.colors.onPrimary
                         )

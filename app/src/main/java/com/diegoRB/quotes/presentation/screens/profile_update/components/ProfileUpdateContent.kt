@@ -6,6 +6,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.AccountCircle
 import androidx.compose.material.icons.rounded.Person
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -63,31 +64,25 @@ fun ProfileEditContent(viewModel: ProfileUpdateViewModel = hiltViewModel()) {
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(250.dp)
+                    .height(200.dp)
             ) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.Center
                 ) {
                     Icon(
-                        modifier = Modifier.size(80.dp),
-                        imageVector = Icons.Rounded.Person,
+                        modifier = Modifier.size(150.dp),
+                        imageVector = Icons.Rounded.AccountCircle,
                         contentDescription = "",
                         tint = White50
                     )
-                    Text(
-                        text = "USUARIO",
-                        fontSize = 30.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = White50
-                    )
+
                 }
             }
 
             Card(
                 modifier = Modifier
-                    .padding(top = 20.dp, bottom = 40.dp)
+                    .padding(bottom = 40.dp)
                     .fillMaxSize(),
                 shape = RoundedCornerShape(25.dp),
                 backgroundColor = White50,
@@ -96,9 +91,17 @@ fun ProfileEditContent(viewModel: ProfileUpdateViewModel = hiltViewModel()) {
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(vertical = 30.dp, horizontal = 20.dp),
+                        .padding(vertical = 30.dp, horizontal = 20.dp, ),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
+                    Text(
+                        text = "USUARIO",
+                        fontSize = 35.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Black900,
+                        maxLines = 1
+                    )
+                    Spacer(modifier = Modifier.height(20.dp))
                     //Muestra avatar usuario
                     if (viewModel.state.image != "") {
                         AsyncImage(

@@ -43,44 +43,47 @@ fun NewQuoteContent(viewModel: NewQuoteViewModel = hiltViewModel()) {
 
     DialogCapturePicture(
         status = dialogState,
-        takePhoto = {viewModel.takePhoto()},
-        pickImage = {viewModel.pickImage()}
+        takePhoto = { viewModel.takePhoto() },
+        pickImage = { viewModel.pickImage() }
     )
 
-    Box(modifier = Modifier.fillMaxWidth()){
+    Box(modifier = Modifier.fillMaxWidth()) {
         Column(
             modifier = Modifier
                 .verticalScroll(rememberScrollState())
-                .background(brush = Brush.verticalGradient(
-                    colors = listOf(
-                        Red900,
-                        Black900,
-                        White50
-                    ), startY = 400f, endY = 2200f
-                ))
+                .background(
+                    brush = Brush.verticalGradient(
+                        colors = listOf(
+                            Red900,
+                            Black900,
+                            White50
+                        ), startY = 400f, endY = 2200f
+                    )
+                )
         ) {
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(200.dp)
 
-            ){
+            ) {
                 Column(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    if(viewModel.state.image!=""){
+                    if (viewModel.state.image != "") {
                         AsyncImage(
                             modifier = Modifier
                                 .fillMaxSize()
                                 .clickable { dialogState.value = true },
                             model = viewModel.state.image,
                             contentDescription = "Selected image",
-                            contentScale = ContentScale.Crop)
-                    }else{
+                            contentScale = ContentScale.Crop
+                        )
+                    } else {
                         //Si no hay imagen seleccionada, muestra una por defecto
                         Image(
-                            modifier= Modifier
+                            modifier = Modifier
                                 .size(120.dp)
                                 .padding(20.dp)
                                 .clickable {
@@ -108,15 +111,17 @@ fun NewQuoteContent(viewModel: NewQuoteViewModel = hiltViewModel()) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(15.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally) {
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text(text = "Nuevo Quote", fontSize = 35.sp, fontWeight = FontWeight.Bold)
 
-                    Text(modifier = Modifier.align(Alignment.Start), text = "Nuevo Quote", fontSize = 40.sp, fontWeight = FontWeight.Bold)
                     Spacer(modifier = Modifier.height(10.dp))
+
                     DefaultTextField(
                         modifier = Modifier
                             .fillMaxWidth(),
                         value = state.name,
-                        onValueChange = {viewModel.onNameInput(it)},
+                        onValueChange = { viewModel.onNameInput(it) },
                         label = "Nombre",
                         icon = Icons.Rounded.Create,
                         tipo = KeyboardType.Text,
@@ -130,7 +135,7 @@ fun NewQuoteContent(viewModel: NewQuoteViewModel = hiltViewModel()) {
                             .height(80.dp)
                             .fillMaxWidth(),
                         value = state.description,
-                        onValueChange = {viewModel.onDescriptionInput(it)},
+                        onValueChange = { viewModel.onDescriptionInput(it) },
                         label = "Descripción",
                         icon = Icons.Rounded.List,
                         tipo = KeyboardType.Text,
@@ -140,7 +145,7 @@ fun NewQuoteContent(viewModel: NewQuoteViewModel = hiltViewModel()) {
                         errorMsg = "",
                         validateField = {}
                     )
-                    
+
                     Spacer(modifier = Modifier.height(5.dp))
 
                     Text(
@@ -148,6 +153,7 @@ fun NewQuoteContent(viewModel: NewQuoteViewModel = hiltViewModel()) {
                             .padding(vertical = 5.dp)
                             .width(110.dp),
                         text = "CATEGORIA",
+                        maxLines = 1,
                         fontSize = 20.sp,
                         fontWeight = FontWeight.Bold
                     )
@@ -161,26 +167,34 @@ fun NewQuoteContent(viewModel: NewQuoteViewModel = hiltViewModel()) {
                                     selected = (option.category == state.category),
                                     onClick = { viewModel.onCategoryInput(option.category) }
                                 )
-                                .border(if(option.category == state.category)BorderStroke(2.dp, Red900) else BorderStroke(1.dp, Grey500), RoundedCornerShape(15.dp)),
+                                .border(
+                                    if (option.category == state.category) BorderStroke(
+                                        2.dp,
+                                        Red900
+                                    ) else BorderStroke(1.dp, Grey500), RoundedCornerShape(15.dp)
+                                ),
                             horizontalArrangement = Arrangement.SpaceEvenly,
                             verticalAlignment = Alignment.CenterVertically
                         ) {
 
                             RadioButton(
                                 selected = (option.category == state.category),
-                                onClick = { viewModel.onCategoryInput(option.category)},
+                                onClick = { viewModel.onCategoryInput(option.category) },
                                 colors = RadioButtonDefaults.colors(selectedColor = Red900)
                             )
                             Row(
                                 modifier = Modifier
                                     .height(50.dp),
-                                verticalAlignment = Alignment.CenterVertically) {
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
                                 Text(
-                                    modifier = Modifier.width(120.dp),
+                                    modifier = Modifier.width(150.dp),
                                     text = option.category,
                                     maxLines = 1
                                 )
+
                                 Spacer(modifier = Modifier.width(20.dp))
+
                                 Image(
                                     modifier = Modifier.size(25.dp),
                                     painter = painterResource(id = option.image),

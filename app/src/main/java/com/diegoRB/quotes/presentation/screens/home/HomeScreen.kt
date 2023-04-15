@@ -7,6 +7,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
@@ -16,7 +17,6 @@ import androidx.navigation.compose.rememberNavController
 import com.diegoRB.quotes.presentation.navigation.HomeBottomBarNavGraph
 import com.diegoRB.quotes.presentation.navigation.HomeBottomBarScreen
 import com.diegoRB.quotes.presentation.ui.theme.*
-import com.diegoRB.quotes.presentation.ui.theme.Red900
 import com.diegoRB.quotes.presentation.ui.theme.White400
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
@@ -60,7 +60,7 @@ fun RowScope.AddItem(
     navController: NavHostController
 ){
     BottomNavigationItem(
-        modifier = Modifier.background(Red900),
+        modifier = Modifier.background(White50),
         label = {
             Text(text = screen.title)
         },
@@ -70,7 +70,7 @@ fun RowScope.AddItem(
         selected = currentDestination?.hierarchy?.any {
             it.route == screen.route
         } == true,
-        selectedContentColor = MaterialTheme.colors.background,
+        selectedContentColor = Color.Black,
         unselectedContentColor = White400,
         onClick = {
             navController.navigate(screen.route) {

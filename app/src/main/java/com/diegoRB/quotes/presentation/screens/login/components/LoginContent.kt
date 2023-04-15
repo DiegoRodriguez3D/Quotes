@@ -46,21 +46,21 @@ fun LoginContent(navController: NavHostController, viewModel: LoginViewModel = h
     ) {
         Column(
             modifier = Modifier
-                .padding(top = 100.dp, bottom = 50.dp),
+                .padding(top = 50.dp, bottom = 50.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Icon(
-                modifier = Modifier.size(80.dp),
+                modifier = Modifier.size(150.dp),
                 imageVector = Icons.Rounded.Person,
                 contentDescription = "",
                 tint = White50
             )
-            Text(text = "LOGIN", fontSize = 40.sp, fontWeight = FontWeight.Bold, color = White50)
+
         }
 
         Card(
             modifier = Modifier
-                .height(500.dp),
+                .height(600.dp),
             shape = RoundedCornerShape(25.dp),
             backgroundColor = White50,
             elevation = 0.dp
@@ -72,6 +72,15 @@ fun LoginContent(navController: NavHostController, viewModel: LoginViewModel = h
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Top
             ) {
+                Text(
+                    text = "LOGIN",
+                    fontSize = 35.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Black900
+                )
+
+                Spacer(modifier = Modifier.height(20.dp))
+
                 DefaultTextField(
                     modifier = Modifier.fillMaxWidth(),
                     value = state.email,
