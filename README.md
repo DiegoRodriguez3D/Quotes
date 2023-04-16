@@ -14,10 +14,11 @@ También tendremos acceso a la sección Mis Quotes, desde donde podremos crear n
 Por último tendremos acceso a la sección perfil, desde donde podremos editar nuestro usuario así como cerrar sesión.
 
 ## GALERIA
-![Screen Shot 2023-04-15 at 4 55 34 PM](https://user-images.githubusercontent.com/69866476/232335449-70bcbc76-37fd-418b-9615-3b0240bf7de9.jpeg)
-![Screen Shot 2023-04-15 at 4 56 04 PM](https://user-images.githubusercontent.com/69866476/232335259-d79cbfe6-2883-44c0-baf9-4645ea49f6b8.jpeg)
-![Screen Shot 2023-04-15 at 5 00 14 PM](https://user-images.githubusercontent.com/69866476/232335276-3c380597-21ac-47fe-8bad-c7cb5a602eca.jpeg)
-![Screen Shot 2023-04-15 at 5 14 54 PM](https://user-images.githubusercontent.com/69866476/232335330-9af99c70-a680-4f52-8ad5-46591d99763d.jpeg)
-![Screen Shot 2023-04-15 at 5 19 39 PM](https://user-images.githubusercontent.com/69866476/232335346-11319742-b7f9-4a9a-b820-aebec052b981.jpeg)
-![Screen Shot 2023-04-15 at 5 14 30 PM](https://user-images.githubusercontent.com/69866476/232335350-db9f90d5-9ad3-4b41-a4ba-850e0fa0c139.jpeg)
-![Screen Shot 2023-04-15 at 5 20 06 PM](https://user-images.githubusercontent.com/69866476/232335363-cfac5a9a-2075-4761-a883-493cdd4d6da8.jpeg)
+
+![Screen Shot 2023-04-15 at 4 55 34 PM](https://user-images.githubusercontent.com/69866476/232335596-5273ad61-d704-496a-aafa-c1138d91caae.jpeg)
+![Screen Shot 2023-04-15 at 4 56 04 PM](https://user-images.githubusercontent.com/69866476/232335598-9cd1799c-5acf-4371-9099-34d88ee89464.jpeg)
+![Screen Shot 2023-04-15 at 5 00 14 PM](https://user-images.githubusercontent.com/69866476/232335662-2f14bcbc-6d6c-4a68-86a7-203f26f70438.jpeg)
+![Screen Shot 2023-04-15 at 5 20 06 PM](https://user-images.githubusercontent.com/69866476/232335667-6c91232f-92a7-43c7-92a3-b0970108013c.jpeg)
+![Screen Shot 2023-04-15 at 5 14 54 PM](https://user-images.githubusercontent.com/69866476/232335671-7a6e0401-27ea-4900-b0ba-df1732f55507.jpeg)
+![Screen Shot 2023-04-15 at 5 19 39 PM](https://user-images.githubusercontent.com/69866476/232335675-d9d34674-08f4-4afb-9d59-dd43a60ba851.jpeg)
+![Screen Shot 2023-04-15 at 5 14 30 PM](https://user-images.githubusercontent.com/69866476/232335683-358f6575-f9cb-45e9-8ddf-fecfdae67a5d.jpeg)
