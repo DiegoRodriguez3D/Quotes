@@ -14,11 +14,13 @@ También tendremos acceso a la pantalla "Mis Quotes", desde donde podremos crear
 Por último tendremos acceso a la pantalla "Perfil", desde donde podremos editar nuestro usuario así como cerrar sesión.
 
 ## GALERIA
+![Screenshot_20230513_164036](https://github.com/DiegoRodriguez3D/Quotes/assets/69866476/3bc4af3a-ed5d-41ae-892d-5e66336e3556)
+![Screenshot_20230513_164126](https://github.com/DiegoRodriguez3D/Quotes/assets/69866476/02bc65c9-92b3-4391-8ab9-5a2db16baaec)
+![Screenshot_20230513_164136](https://github.com/DiegoRodriguez3D/Quotes/assets/69866476/7dc780fb-036c-4a88-96f4-645fb36823d6)
+![Screenshot_20230513_164147](https://github.com/DiegoRodriguez3D/Quotes/assets/69866476/4238b0fc-1bb9-4a55-9bd8-bdd90b07694f)
+![Screenshot_20230513_164204](https://github.com/DiegoRodriguez3D/Quotes/assets/69866476/c02b2f9a-a706-428c-9a24-2b11712f1c2e)
+![Screenshot_20230513_164225](https://github.com/DiegoRodriguez3D/Quotes/assets/69866476/48d46fd7-c95d-4fbc-be33-490d1ff9bb89)
+![Screenshot_20230513_164235](https://github.com/DiegoRodriguez3D/Quotes/assets/69866476/c4a591a7-fcf3-4e56-880e-71f76cceff80)
+![Screenshot_20230513_164249](https://github.com/DiegoRodriguez3D/Quotes/assets/69866476/b221b139-dcaa-4fa1-9bc8-219e3db90046)
+![Screenshot_20230513_164255](https://github.com/DiegoRodriguez3D/Quotes/assets/69866476/1e633e3f-127a-47bb-a63a-a0b8aca57332)
 
-![Screen Shot 2023-04-15 at 4 55 34 PM](https://user-images.githubusercontent.com/69866476/232335596-5273ad61-d704-496a-aafa-c1138d91caae.jpeg)
-![Screen Shot 2023-04-15 at 4 56 04 PM](https://user-images.githubusercontent.com/69866476/232335598-9cd1799c-5acf-4371-9099-34d88ee89464.jpeg)
-![Screen Shot 2023-04-15 at 5 00 14 PM](https://user-images.githubusercontent.com/69866476/232335662-2f14bcbc-6d6c-4a68-86a7-203f26f70438.jpeg)
-![Screen Shot 2023-04-15 at 5 20 06 PM](https://user-images.githubusercontent.com/69866476/232335667-6c91232f-92a7-43c7-92a3-b0970108013c.jpeg)
-![Screen Shot 2023-04-15 at 5 14 54 PM](https://user-images.githubusercontent.com/69866476/232335671-7a6e0401-27ea-4900-b0ba-df1732f55507.jpeg)
-![Screen Shot 2023-04-15 at 5 19 39 PM](https://user-images.githubusercontent.com/69866476/232335675-d9d34674-08f4-4afb-9d59-dd43a60ba851.jpeg)
-![Screen Shot 2023-04-15 at 5 14 30 PM](https://user-images.githubusercontent.com/69866476/232335683-358f6575-f9cb-45e9-8ddf-fecfdae67a5d.jpeg)
